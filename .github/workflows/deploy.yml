@@ -16,10 +16,10 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
-# Set the default working dir for all run: steps
+# All shell steps run from the app subfolder
 defaults:
   run:
-    working-directory: <SUBDIR>
+    working-directory: horizon-node-react
 
 jobs:
   build:
@@ -33,21 +33,32 @@ jobs:
         with:
           node-version: 18
 
+      # Optional debug: shows folders so you can verify the path
+      - name: Debug workspace
+        run: |
+          pwd
+          ls -la
+          ls -la ..
+
       - name: Install deps
-        run: npm install
-        # use `npm ci` if you commit a package-lock.json
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
 
       - name: Build
         run: npm run build
 
-      # SPA fallback so client-side routes work on refresh
-      - name: Add SPA fallback
+      - name: SPA fallback (copy index -> 404)
         run: cp dist/index.html dist/404.html
 
-      - name: Upload artifact (dist)
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: <SUBDIR>/dist    # note: path is repo-root relative
+          # NOTE: repo-root relative path here
+          path: horizon-node-react/dist
 
   deploy:
     needs: build
