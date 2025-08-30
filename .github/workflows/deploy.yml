@@ -19,7 +19,7 @@ concurrency:
 # All shell steps run from the app subfolder
 defaults:
   run:
-    working-directory: horizon-node-react
+    working-directory: trihelm-node-react
 
 jobs:
   build:
