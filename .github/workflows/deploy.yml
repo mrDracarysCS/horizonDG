@@ -58,7 +58,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # NOTE: repo-root relative path here
-          path: horizon-node-react/dist
+          path: trihelm-node-react/dist
 
   deploy:
     needs: build
