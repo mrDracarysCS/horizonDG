@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'horizon-node-react/**'
+      - 'trihelm-node-react/**'
   workflow_dispatch:
 
 permissions:
