@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - '<SUBDIR>/horizon-node-react'      # only run when that folder changes
+      - 'horizon-node-react/**'
   workflow_dispatch:
 
 permissions:
