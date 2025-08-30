@@ -3,6 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  server: { port: 5173, host: true },
-  preview: { port: 4173 }
+  base: 'horizonDG',   // <-- add this if your URL is https://yourname.github.io/<YOUR_REPO>/
 })
