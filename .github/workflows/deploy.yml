@@ -3,6 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    paths:
+      - '<SUBDIR>/horizon-node-react'      # only run when that folder changes
   workflow_dispatch:
 
 permissions:
@@ -11,8 +13,13 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
+
+# Set the default working dir for all run: steps
+defaults:
+  run:
+    working-directory: <SUBDIR>
 
 jobs:
   build:
@@ -27,19 +34,20 @@ jobs:
           node-version: 18
 
       - name: Install deps
-        run: npm ci
+        run: npm install
+        # use `npm ci` if you commit a package-lock.json
 
       - name: Build
         run: npm run build
 
-      # SPA fallback: copy index.html → 404.html so client-side routes work
+      # SPA fallback so client-side routes work on refresh
       - name: Add SPA fallback
         run: cp dist/index.html dist/404.html
 
-      - name: Upload artifact
+      - name: Upload artifact (dist)
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: <SUBDIR>/dist    # note: path is repo-root relative
 
   deploy:
     needs: build
