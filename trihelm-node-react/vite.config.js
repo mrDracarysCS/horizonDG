@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-    base: '/horizonDG/',   // leading + trailing slash, exact repo name
+    base: '/TrihelmIG/',   // leading + trailing slash, exact repo name
 })

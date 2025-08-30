@@ -1,10 +1,10 @@
 import React from "react";
 
 export default function App() {
-  return <HorizonLanding />;
+  return <TrihelmLanding />;
 }
 
-function HorizonLanding() {
+function TrihelmLanding() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100 selection:bg-amber-400/40 selection:text-neutral-900">
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60 border-b border-white/10">
@@ -15,7 +15,7 @@ function HorizonLanding() {
                 <path fill="currentColor" d="M4 20h16v-2H4v2Zm2-3h2v-5h2v5h2v-8h2v8h2v-6h2v6h2V9h-2V7h-2V4h-2v3h-2v2h-2v3H8v-2H6v8Z"/>
               </svg>
             </div>
-            <span className="font-semibold tracking-wide text-lg">Horizon Development Group</span>
+            <span className="font-semibold tracking-wide text-lg">Trihelm Innovation Group</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm">
             <a href="#services" className="hover:text-amber-400">Services</a>
@@ -158,7 +158,7 @@ function HorizonLanding() {
             <p className="mt-3 text-neutral-300 max-w-xl">Tell us about your project and we’ll follow up within one business day.</p>
             <ul className="mt-6 space-y-3 text-neutral-300">
               <li className="flex items-start gap-3"><PhoneIcon/> <span>(305) 555‑0199</span></li>
-              <li className="flex items-start gap-3"><MailIcon/> <span>estimates@horizondevgroup.com</span></li>
+              <li className="flex items-start gap-3"><MailIcon/> <span>estimates@trihelmIG.com</span></li>
               <li className="flex items-start gap-3"><MapPinIcon/> <span>Miami, Florida • Serving the Southeast</span></li>
             </ul>
           </div>
@@ -190,7 +190,7 @@ function HorizonLanding() {
               <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-700 grid place-items-center">
                 <svg viewBox="0 0 24 24" className="h-4 w-4 text-neutral-900"><path fill="currentColor" d="M4 20h16v-2H4v2Zm2-3h2v-5h2v5h2v-8h2v8h2v-6h2v6h2V9h-2V7h-2V4h-2v3h-2v2h-2v3H8v-2H6v8Z"/></svg>
               </div>
-              <span className="font-medium">Horizon Development Group</span>
+              <span className="font-medium">Trihelm Innovation Group</span>
             </div>
             <p className="text-neutral-400">High‑end general contracting, interior remodeling, and in‑house countertop fabrication for South Florida.</p>
           </div>
@@ -208,7 +208,7 @@ function HorizonLanding() {
             <p className="text-neutral-500 mb-3">Contact</p>
             <ul className="space-y-2 text-neutral-300">
               <li>(305) 555‑0199</li>
-              <li>estimates@horizondevgroup.com</li>
+              <li>estimates@trihelmIG.com</li>
               <li>Miami, Florida</li>
             </ul>
           </div>
